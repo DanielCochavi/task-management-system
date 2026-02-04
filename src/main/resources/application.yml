@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: TaskManagementSystem
+  datasource:
+    url: jdbc:h2:mem:taskdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  h2:
+    console:
+      enabled: true
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      acks: 1
+      retries: 0
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    properties:
+      enable.idempotence: false
+      spring.json.add.type.headers: false
+      max.block.ms: 1000
+
+logging:
+  level:
+    root: INFO
+    org.springframework.kafka.support.LoggingProducerListener: OFF
+    # Reduce Kafka client noise in local/dev when broker is unavailable.
+    org.apache.kafka: ERROR
