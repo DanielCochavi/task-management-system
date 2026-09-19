@@ -8,6 +8,24 @@ Task management REST API with daily-unique titles and urgency sorting.
 - Spring Data JPA + H2 (in-memory)
 - Spring Kafka (producer only)
 
+
+## AI-Assisted Development
+
+This project was developed using an AI-assisted engineering workflow with Cursor and Claude models.
+
+AI tools were used throughout the development process to support:
+
+- Backend implementation and feature development
+- Code exploration and refactoring
+- Debugging and troubleshooting
+- Test generation and validation
+- Code review and quality improvements
+- Development workflow acceleration
+
+Cursor served as the primary AI-assisted development environment, while Claude models were used to support reasoning, implementation decisions, and code improvements.
+
+All AI-assisted suggestions and generated changes were reviewed, validated, and tested manually before being incorporated into the project.
+
 ## Running the Application
 The application runs out of the box with an in-memory database. No external infrastructure is required.
 
